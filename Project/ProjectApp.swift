@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ProjectApp: App {
+    @StateObject private var perfumeManager = PerfumeManager()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(perfumeManager)
         }
     }
 }

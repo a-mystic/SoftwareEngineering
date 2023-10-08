@@ -8,17 +8,115 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showDescription = false
+    
+    @EnvironmentObject var perfumeManager: PerfumeManager
+    
+    @AppStorage("userPreference") var userPreferenceIsNeed = true
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            ZStack {
+                background
+                VStack {
+                    Spacer()
+                    dropBox()
+                    Spacer()
+                    emojiSlider
+                }
+            }
+            .navigationTitle("Perfume")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button{
+                        showDescription = true
+                    } label: {
+                        Image(systemName: "questionmark.circle")
+                    }
+                }
+            }
+//            .toolbarBackground(Color.white, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .sheet(isPresented: $showDescription) {
+                DescriptionView()
+            }
+            .fullScreenCover(isPresented: $userPreferenceIsNeed, content: {
+                EnterUserPreferenceView(userPreferenceIsNeed: $userPreferenceIsNeed)
+            })
         }
-        .padding()
+    }
+    
+    private var background: some View {
+        ZStack {
+            Color.gray.opacity(0.4)
+            Rain()
+        }
+    }
+    
+    @State private var showPerfume = false
+    
+    private func dropBox() -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 14)
+                .foregroundStyle(.ultraThinMaterial)
+                .frame(width: 250, height: 250)
+            VStack {
+                Image(systemName: "shippingbox")
+                    .imageScale(.large)
+                    .font(.largeTitle)
+                Text("Drop your emotion")
+            }
+            .foregroundStyle(.white.opacity(0.8))
+        }
+        .overlay {
+            if perfumeManager.fetchingStatus == .fetching {
+                ProgressView()
+                    .scaleEffect(2)
+                    .tint(.white)
+            }
+        }
+        .dropDestination(for: String.self) { items, location in
+            drop(items)
+        }
+        .sheet(isPresented: $showPerfume) {
+            PerFumeView()
+        }
+    }
+    
+    private func drop(_ items: [String]) -> Bool {
+        if let item = items.first {
+            perfumeManager.recommendPerfumeByValue(calcValue(item, whether: "cloudy"))
+            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in    // 시연할때 ProgressView를 보여주기위한 코드
+                showPerfume = true
+            }
+        }
+        return true
+    }
+    
+    private func calcValue(_ emotion: String, whether: String) -> Float {
+        return 0.3
+    }
+    
+    private let emojis = ["😀", "😄", "😐", "😢", "😭"]
+    
+    private var emojiSlider: some View {
+        ScrollView(.horizontal) {
+            HStack {
+                ForEach(emojis, id: \.self) { emoji in
+                    Text(emoji)
+                        .font(.system(size: 30))
+                        .draggable(emoji)
+                }
+            }
+            .padding(.horizontal)
+        }
+//        .background(Color.black.opacity(0.2))
+//        .clipped()
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(PerfumeManager())
 }

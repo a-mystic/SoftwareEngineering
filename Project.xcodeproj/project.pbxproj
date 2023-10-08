@@ -7,18 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A47C6712AD2B991003680A7 /* Perfume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A47C6702AD2B991003680A7 /* Perfume.swift */; };
+		4A47C6732AD2B9BF003680A7 /* PerfumeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A47C6722AD2B9BF003680A7 /* PerfumeManager.swift */; };
+		4A744A8C2AD2AF1D0068BEA1 /* PerFumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A744A8B2AD2AF1D0068BEA1 /* PerFumeView.swift */; };
+		4A744A8E2AD2B2AD0068BEA1 /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A744A8D2AD2B2AD0068BEA1 /* DescriptionView.swift */; };
+		4A744A992AD2B4190068BEA1 /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A744A962AD2B4190068BEA1 /* Rain.swift */; };
+		4A744A9A2AD2B4190068BEA1 /* rainfall.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A744A972AD2B4190068BEA1 /* rainfall.sks */; };
+		4A744A9B2AD2B4190068BEA1 /* rainfalllanding.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A744A982AD2B4190068BEA1 /* rainfalllanding.sks */; };
 		4A88F3162AD29A8C0046D0CE /* ProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A88F3152AD29A8C0046D0CE /* ProjectApp.swift */; };
 		4A88F3182AD29A8C0046D0CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A88F3172AD29A8C0046D0CE /* ContentView.swift */; };
 		4A88F31A2AD29A8D0046D0CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A88F3192AD29A8D0046D0CE /* Assets.xcassets */; };
 		4A88F31D2AD29A8D0046D0CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A88F31C2AD29A8D0046D0CE /* Preview Assets.xcassets */; };
+		4ABC28E52AD2C7E500E80913 /* EnterUserPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC28E42AD2C7E500E80913 /* EnterUserPreferenceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A47C6702AD2B991003680A7 /* Perfume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perfume.swift; sourceTree = "<group>"; };
+		4A47C6722AD2B9BF003680A7 /* PerfumeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfumeManager.swift; sourceTree = "<group>"; };
+		4A744A8B2AD2AF1D0068BEA1 /* PerFumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerFumeView.swift; sourceTree = "<group>"; };
+		4A744A8D2AD2B2AD0068BEA1 /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		4A744A962AD2B4190068BEA1 /* Rain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rain.swift; sourceTree = "<group>"; };
+		4A744A972AD2B4190068BEA1 /* rainfall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rainfall.sks; sourceTree = "<group>"; };
+		4A744A982AD2B4190068BEA1 /* rainfalllanding.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rainfalllanding.sks; sourceTree = "<group>"; };
 		4A88F3122AD29A8C0046D0CE /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A88F3152AD29A8C0046D0CE /* ProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectApp.swift; sourceTree = "<group>"; };
 		4A88F3172AD29A8C0046D0CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4A88F3192AD29A8D0046D0CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A88F31C2AD29A8D0046D0CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4ABC28E42AD2C7E500E80913 /* EnterUserPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterUserPreferenceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +48,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A744A8F2AD2B3370068BEA1 /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				4A744A962AD2B4190068BEA1 /* Rain.swift */,
+				4A744A972AD2B4190068BEA1 /* rainfall.sks */,
+				4A744A982AD2B4190068BEA1 /* rainfalllanding.sks */,
+			);
+			path = Backgrounds;
+			sourceTree = "<group>";
+		};
 		4A88F3092AD29A8C0046D0CE = {
 			isa = PBXGroup;
 			children = (
@@ -53,7 +79,13 @@
 			children = (
 				4A88F3152AD29A8C0046D0CE /* ProjectApp.swift */,
 				4A88F3172AD29A8C0046D0CE /* ContentView.swift */,
+				4A744A8B2AD2AF1D0068BEA1 /* PerFumeView.swift */,
+				4A744A8D2AD2B2AD0068BEA1 /* DescriptionView.swift */,
+				4A47C6702AD2B991003680A7 /* Perfume.swift */,
+				4A47C6722AD2B9BF003680A7 /* PerfumeManager.swift */,
+				4ABC28E42AD2C7E500E80913 /* EnterUserPreferenceView.swift */,
 				4A88F3192AD29A8D0046D0CE /* Assets.xcassets */,
+				4A744A8F2AD2B3370068BEA1 /* Backgrounds */,
 				4A88F31B2AD29A8D0046D0CE /* Preview Content */,
 			);
 			path = Project;
@@ -125,7 +157,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A744A9B2AD2B4190068BEA1 /* rainfalllanding.sks in Resources */,
 				4A88F31D2AD29A8D0046D0CE /* Preview Assets.xcassets in Resources */,
+				4A744A9A2AD2B4190068BEA1 /* rainfall.sks in Resources */,
 				4A88F31A2AD29A8D0046D0CE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +171,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A744A8C2AD2AF1D0068BEA1 /* PerFumeView.swift in Sources */,
 				4A88F3182AD29A8C0046D0CE /* ContentView.swift in Sources */,
 				4A88F3162AD29A8C0046D0CE /* ProjectApp.swift in Sources */,
+				4A744A992AD2B4190068BEA1 /* Rain.swift in Sources */,
+				4A47C6712AD2B991003680A7 /* Perfume.swift in Sources */,
+				4A744A8E2AD2B2AD0068BEA1 /* DescriptionView.swift in Sources */,
+				4A47C6732AD2B9BF003680A7 /* PerfumeManager.swift in Sources */,
+				4ABC28E52AD2C7E500E80913 /* EnterUserPreferenceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
