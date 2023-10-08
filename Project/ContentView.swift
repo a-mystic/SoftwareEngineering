@@ -95,7 +95,7 @@ struct ContentView: View {
     private func drop(_ items: [String]) -> Bool {
         if let item = items.first {
             perfumeManager.recommendPerfumeByValue(calcValue(item, whether: "cloudy"))
-            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in    // 시연할때 ProgressView를 보여주기위한 코드
+            Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in    // 시연할때 ProgressView를 보여주기위한 코드 나중엔 제거 예정.
                 showPerfume = true
             }
         }
