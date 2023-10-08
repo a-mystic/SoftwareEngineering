@@ -36,7 +36,6 @@ struct ContentView: View {
                     }
                 }
             }
-//            .toolbarBackground(Color.white, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .sheet(isPresented: $showDescription) {
                 DescriptionView()
@@ -47,11 +46,20 @@ struct ContentView: View {
         }
     }
     
+    @State private var currentWeather = ""
+    
     private var background: some View {
         ZStack {
             Color.gray.opacity(0.4)
             Rain()
         }
+        .onAppear {
+            getCurrentWeather()
+        }
+    }
+    
+    private func getCurrentWeather() {
+        // get current weather from backend and change currentWeather value...
     }
     
     @State private var showPerfume = false
@@ -61,8 +69,8 @@ struct ContentView: View {
             RoundedRectangle(cornerRadius: 14)
                 .foregroundStyle(.ultraThinMaterial)
                 .frame(width: 250, height: 250)
-            VStack {
-                Image(systemName: "shippingbox")
+            VStack(spacing: 30) {
+                Image(systemName: "face.smiling")
                     .imageScale(.large)
                     .font(.largeTitle)
                 Text("Drop your emotion")
