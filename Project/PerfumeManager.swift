@@ -31,11 +31,25 @@ class PerfumeManager: ObservableObject {
         
     private func fetchPerfume(_ value: Float) async -> Perfume {
         // fetch recommended perfume.
+        // add error handling
+//        guard let url = URL(string: "url") else { return Perfume(name: "", description: "", imageUrl: "")}
+//        do {
+//            let (data, response) = try await URLSession.shared.data(from: url)
+//            let recommendedPerfume = try JSONDecoder().decode(PerfumeDecoder.self, from: data)
+//            print(recommendedPerfume.result)
+//        } catch {
+//            print(error)
+//        }
         let recommendedPerfume = Perfume(
             name: "Gabrielle CHANEL - Perfume & Fragrance | CHANEL",
             description: "이 향수는....",
             imageUrl: "https://puls-img.chanel.com/1688483382665-oneplpherobannermobile1500x1600pxjpg_1600x1500.jpg"
         )
         return recommendedPerfume
+//        return Perfume(name: "", description: "", imageUrl: "")
+    }
+    
+    struct PerfumeDecoder: Codable {
+        var result: Perfume
     }
 }

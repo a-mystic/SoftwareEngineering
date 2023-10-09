@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Perfume {
+struct Perfume: Codable {
     private(set) var name: String
     private(set) var description: String
     private(set) var imageUrl: String
