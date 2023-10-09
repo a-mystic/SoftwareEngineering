@@ -20,20 +20,22 @@ class PerfumeManager: ObservableObject {
     @MainActor
     func recommendPerfumeByValue(_ value: Float) {
         fetchingStatus = .fetching
-        fetchPerfume(value)
-        _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: false, block: { _ in // 시연할때 ProgressView를 보여주기위한 코드
-            self.fetchingStatus = .idle
-        })
+        Task {
+            let recommendedPerfume = await fetchPerfume(value)
+            _ = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in // 시연할때 ProgressView를 보여주기위한 코드
+                self.fetchingStatus = .idle
+            }
+            manager.makePerfume(recommendedPerfume)
+        }
     }
         
-    private func fetchPerfume(_ value: Float) {
+    private func fetchPerfume(_ value: Float) async -> Perfume {
         // fetch recommended perfume.
         let recommendedPerfume = Perfume(
             name: "Gabrielle CHANEL - Perfume & Fragrance | CHANEL",
             description: "이 향수는....",
             imageUrl: "https://puls-img.chanel.com/1688483382665-oneplpherobannermobile1500x1600pxjpg_1600x1500.jpg"
         )
-        // set manager values to fetched value
-        manager.makePerfume(recommendedPerfume)
+        return recommendedPerfume
     }
 }
