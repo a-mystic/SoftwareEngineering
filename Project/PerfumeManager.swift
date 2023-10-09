@@ -29,10 +29,10 @@ class PerfumeManager: ObservableObject {
         }
     }
         
-    private func fetchPerfume(_ value: Float) async -> Perfume {
+    private func fetchPerfume(_ value: Float, preference: String = "오드뚜왈렛") async -> Perfume {
         // fetch recommended perfume.
-        // add error handling
-//        guard let url = URL(string: "url") else { return Perfume(name: "", description: "", imageUrl: "")}
+        // add error handling(server response & url)
+//        guard let url = URL(string: "http://127.0.0.1:8000/?value=\(value)&preference=\(preference)") else { return Perfume(name: "", description: "", imageUrl: "")}
 //        do {
 //            let (data, response) = try await URLSession.shared.data(from: url)
 //            let recommendedPerfume = try JSONDecoder().decode(PerfumeDecoder.self, from: data)
