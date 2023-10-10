@@ -47,6 +47,7 @@ struct ContentView: View {
     }
     
     @State private var currentWeather = ""
+    @StateObject private var location = LocationManager()
     
     private var background: some View {
         ZStack {
@@ -54,12 +55,42 @@ struct ContentView: View {
             Rain()
         }
         .onAppear {
-            getCurrentWeather()
+            Task {
+                await getCurrentWeather()
+            }
+        }
+        .onChange(of: location.locationManager.authorizationStatus) { _ in
+            if location.locationManager.authorizationStatus == .authorizedWhenInUse ||
+                location.locationManager.authorizationStatus == .authorizedAlways {
+                Task {
+                    await getCurrentWeather()
+                }
+            }
         }
     }
     
-    private func getCurrentWeather() {
+    private func getCurrentWeather() async {
         // get current weather from backend and change currentWeather value...
+        let (latitude, longitude) = getCurrentLocation()
+        print(latitude)
+        print(longitude)
+        // fetch current weather
+//        guard let url = URL(string: "http://127.0.0.1:8000/weather?lat=\(latitude)&lon=\(longitude)") else { return }
+//        do {
+//            let (data, _) = try await URLSession.shared.data(from: url)
+//            let currentWeather = try JSONDecoder().decode(String.self, from: data)
+//            print(currentWeather)
+//        } catch {
+//            print(error)
+//        }
+    }
+    
+    private func getCurrentLocation() -> (latitude: String, longitude: String) {
+        if let latitude = location.locationManager.location?.coordinate.latitude.description,
+           let longitude = location.locationManager.location?.coordinate.longitude.description {
+            return (latitude, longitude)
+        }
+        return ("", "")
     }
     
     @State private var showPerfume = false
