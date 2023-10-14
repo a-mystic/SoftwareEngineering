@@ -1,5 +1,5 @@
 //
-//  PerFumeView.swift
+//  RecommendedPerfume.swift
 //  Project
 //
 //  Created by a mystic on 10/8/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PerFumeView: View {
+struct RecommendedPerfume: View {
     @EnvironmentObject private var perfumeManager: PerfumeManager
     
     @Environment(\.dismiss) var dismiss

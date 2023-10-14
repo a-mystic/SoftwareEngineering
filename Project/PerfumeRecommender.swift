@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  PerfumeRecommender.swift
 //  Project
 //
 //  Created by a mystic on 10/8/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct PerfumeRecommender: View {
     @State private var showDescription = false
     
     @EnvironmentObject var perfumeManager: PerfumeManager
@@ -38,10 +38,10 @@ struct ContentView: View {
             }
             .toolbarBackground(.visible, for: .navigationBar)
             .sheet(isPresented: $showDescription) {
-                DescriptionView()
+                Description()
             }
             .fullScreenCover(isPresented: $userPreferenceIsNeed, content: {
-                EnterUserPreferenceView(userPreferenceIsNeed: $userPreferenceIsNeed)
+                EnterUserPreference(userPreferenceIsNeed: $userPreferenceIsNeed)
             })
         }
     }
@@ -119,7 +119,7 @@ struct ContentView: View {
             drop(items)
         }
         .sheet(isPresented: $showPerfume) {
-            PerFumeView()
+            RecommendedPerfume()
         }
     }
     
@@ -156,6 +156,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    PerfumeRecommender()
         .environmentObject(PerfumeManager())
 }

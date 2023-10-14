@@ -1,5 +1,5 @@
 //
-//  DescriptionView.swift
+//  Description.swift
 //  Project
 //
 //  Created by a mystic on 10/8/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DescriptionView: View {
+struct Description: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -28,5 +28,5 @@ struct DescriptionView: View {
 }
 
 #Preview {
-    DescriptionView()
+    Description()
 }

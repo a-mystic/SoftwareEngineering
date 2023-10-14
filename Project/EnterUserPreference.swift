@@ -1,5 +1,5 @@
 //
-//  EnterUserPreferenceView.swift
+//  EnterUserPreference.swift
 //  Project
 //
 //  Created by a mystic on 10/8/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EnterUserPreferenceView: View {  // 이 View는 나중에 나중에 추가예정
+struct EnterUserPreference: View {  // 이 View는 나중에 나중에 추가예정
     @Binding var userPreferenceIsNeed: Bool
     
     private let weathers = ["맑은 날", "흐린 날"]
@@ -55,5 +55,5 @@ struct EnterUserPreferenceView: View {  // 이 View는 나중에 나중에 추�
 }
 
 #Preview {
-    EnterUserPreferenceView(userPreferenceIsNeed: .constant(true))
+    EnterUserPreference(userPreferenceIsNeed: .constant(true))
 }
