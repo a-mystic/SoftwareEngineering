@@ -19,4 +19,10 @@ class Perfume(BaseModel):
 async def perfume(value: float, preference: str):
     print(value, preference)
     if value > 0.5 and value <= 1:
-        return {"perfume" : Perfume(name = "perfume name", description = "this perfume is..", imageUrl = "https://puls-img.chanel.com/1688483382665-oneplpherobannermobile1500x1600pxjpg_1600x1500.jpg")}
+        return {
+            "perfume" : Perfume(
+                name = "perfume name", 
+                description = "this perfume is..", 
+                imageUrl = "https://puls-img.chanel.com/1688483382665-oneplpherobannermobile1500x1600pxjpg_1600x1500.jpg"
+                )
+                }
