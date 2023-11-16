@@ -53,9 +53,9 @@
 		4A744A8F2AD2B3370068BEA1 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
-				4A744A962AD2B4190068BEA1 /* Rain.swift */,
-				4A744A972AD2B4190068BEA1 /* rainfall.sks */,
-				4A744A982AD2B4190068BEA1 /* rainfalllanding.sks */,
+				4AAC78052B060D6B00B0F958 /* Snow */,
+				4AAC78042B060D6400B0F958 /* Sunny */,
+				4AAC78032B060D5800B0F958 /* Rain */,
 			);
 			path = Backgrounds;
 			sourceTree = "<group>";
@@ -99,6 +99,30 @@
 				4A88F31C2AD29A8D0046D0CE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4AAC78032B060D5800B0F958 /* Rain */ = {
+			isa = PBXGroup;
+			children = (
+				4A744A962AD2B4190068BEA1 /* Rain.swift */,
+				4A744A972AD2B4190068BEA1 /* rainfall.sks */,
+				4A744A982AD2B4190068BEA1 /* rainfalllanding.sks */,
+			);
+			path = Rain;
+			sourceTree = "<group>";
+		};
+		4AAC78042B060D6400B0F958 /* Sunny */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sunny;
+			sourceTree = "<group>";
+		};
+		4AAC78052B060D6B00B0F958 /* Snow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Snow;
 			sourceTree = "<group>";
 		};
 		4AE3AF952ADACE1B0077FFD0 /* Models */ = {

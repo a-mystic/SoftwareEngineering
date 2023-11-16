@@ -20,13 +20,15 @@ struct RecommendedPerfume: View {
                         if let image = imagePhase.image {
                             image
                                 .resizable()
-                                .frame(width: 300, height: 300)
+                                .aspectRatio(contentMode: .fill)
                                 .clipShape(RoundedRectangle(cornerRadius: 14))
                         }
                     }
                 }
-                Section("향수 정보") {
+                Section("향수 이름") {
                     Text(perfumeManager.manager.name)
+                }
+                Section("향수 설명") {
                     Text(perfumeManager.manager.description)
                 }
             }
@@ -39,4 +41,9 @@ struct RecommendedPerfume: View {
             }
         }
     }
+}
+
+#Preview {
+    RecommendedPerfume()
+        .environmentObject(PerfumeManager())
 }
