@@ -40,7 +40,6 @@ class PerfumeManager: ObservableObject {
 //        } catch {
 //            print(error)
 //        }
-        print(value)
         let recommendedPerfume = Perfume(
             name: "Gabrielle CHANEL - Perfume & Fragrance | CHANEL",
             description: "이 향수는....",

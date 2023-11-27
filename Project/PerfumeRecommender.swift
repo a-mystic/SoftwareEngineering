@@ -58,6 +58,7 @@ struct PerfumeRecommender: View {
         ZStack {
             Color.gray.opacity(0.4)
             weatherBackgroundByCurrentWeather()
+                .ignoresSafeArea(edges: .bottom)
         }
         .onAppear {
             Task {
@@ -179,8 +180,6 @@ struct PerfumeRecommender: View {
             }
             .padding(.horizontal)
         }
-        .background(Color.gray.opacity(0.2))
-//        .clipped()
     }
 }
 

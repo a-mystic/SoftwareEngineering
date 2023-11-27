@@ -16,7 +16,7 @@ struct Sunny: View {
                 RoundedRectangle(cornerRadius: 14)
                     .foregroundColor(.brown)
                     .scaleEffect(1)
-                    .frame(width: insideWidth , height: 15)
+                    .frame(width: insideWidth , height: 100)
                 elements(width: insideWidth, height: insideHeight)
             }
             .background(Color.blue)

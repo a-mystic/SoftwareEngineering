@@ -42,18 +42,18 @@ struct Rain: View {
             .scaleEffect(3)     // replace magic number to relative number
             .frame(width: width, height: height)
             .offset(x: width / 3, y: height / 3)
-        Text("☁️")
-            .scaleEffect(3)     // replace magic number to relative number
-            .frame(width: width, height: height)
-            .offset(x: -width / 3, y: -height / 2)
-        Text("☁️")
-            .scaleEffect(3)     // replace magic number to relative number
-            .frame(width: width, height: height)
-            .offset(x: -width / 5, y: -height / 2)
         Text("🌧️")
             .scaleEffect(3)     // replace magic number to relative number
             .frame(width: width, height: height)
-            .offset(x: width / 6, y: -height / 2)
+            .offset(x: -width / 3, y: -height / 3.5)
+        Text("☁️")
+            .scaleEffect(3)     // replace magic number to relative number
+            .frame(width: width, height: height)
+            .offset(x: -width / 7, y: -height / 3.5)
+        Text("🌧️")
+            .scaleEffect(3)     // replace magic number to relative number
+            .frame(width: width, height: height)
+            .offset(x: width / 6, y: -height / 3.5)
     }
 }
 

@@ -19,7 +19,7 @@ struct Snow: View {
                 RoundedRectangle(cornerRadius: 14)
                     .foregroundColor(.white)
                     .scaleEffect(1)
-                    .frame(width: insideWidth , height: 15)
+                    .frame(width: insideWidth , height: 100)
                 elements(width: insideWidth, height: insideHeight)
             }
         }
