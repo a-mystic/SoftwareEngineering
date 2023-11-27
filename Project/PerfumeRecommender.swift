@@ -13,6 +13,8 @@ struct PerfumeRecommender: View {
     @EnvironmentObject var perfumeManager: PerfumeManager
     
     @AppStorage("userPreference") var userPreferenceIsNeed = true
+    @AppStorage("preferencedAge") var preferencedAge = "대학생"
+    @AppStorage("preferencedPerfume") var preferencedPerfume = "시트러스 타입"
     
     var body: some View {
         NavigationStack {
@@ -41,18 +43,21 @@ struct PerfumeRecommender: View {
                 Description()
             }
             .fullScreenCover(isPresented: $userPreferenceIsNeed, content: {
-                EnterUserPreference(userPreferenceIsNeed: $userPreferenceIsNeed)
+                EnterUserPreference(
+                    userPreferenceIsNeed: $userPreferenceIsNeed,
+                    preferencedAge: $preferencedAge,
+                    preferencedPerfume: $preferencedPerfume
+                )
             })
         }
     }
     
-    @State private var currentWeather = ""
     @StateObject private var location = LocationManager()
     
     private var background: some View {
         ZStack {
             Color.gray.opacity(0.4)
-            Rain()
+            weatherBackgroundByCurrentWeather()
         }
         .onAppear {
             Task {
@@ -68,6 +73,19 @@ struct PerfumeRecommender: View {
             }
         }
     }
+    
+    @ViewBuilder
+    private func weatherBackgroundByCurrentWeather() -> some View {
+        if currentWeather == "rain" {
+            Rain()
+        } else if currentWeather == "snow" {
+            Snow()
+        } else if currentWeather == "sunny" {
+            Sunny()
+        }
+    }
+    
+    @State private var currentWeather = "rain"
     
     private func getCurrentWeather() async {
         // get current weather from backend and change currentWeather value...
@@ -125,7 +143,11 @@ struct PerfumeRecommender: View {
     
     private func drop(_ items: [String]) -> Bool {
         if let item = items.first {
-            perfumeManager.recommendPerfumeByValue(calcValue(item, whether: "cloudy"))
+            perfumeManager.recommendPerfumeByValue(
+                calcValue(item),
+                age: preferencedAge, preference:
+                    preferencedPerfume
+            )
             Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in    // 시연할때 ProgressView를 보여주기위한 코드 나중엔 제거 예정.
                 showPerfume = true
             }
@@ -133,15 +155,22 @@ struct PerfumeRecommender: View {
         return true
     }
     
-    private func calcValue(_ emotion: String, whether: String) -> Float {
-        return 0.3
+    private func calcValue(_ emotion: String) -> Float {
+        switch emotion {
+        case "😀": return 0.5
+        case "😄": return 1
+        case "😐": return 0
+        case "😢": return -0.5
+        case "😭": return -1
+        default: return 0
+        }
     }
     
     private let emojis = ["😀", "😄", "😐", "😢", "😭"]
     
     private var emojiSlider: some View {
         ScrollView(.horizontal) {
-            HStack {
+            HStack(spacing: 20) {
                 ForEach(emojis, id: \.self) { emoji in
                     Text(emoji)
                         .font(.system(size: 30))
@@ -150,7 +179,7 @@ struct PerfumeRecommender: View {
             }
             .padding(.horizontal)
         }
-//        .background(Color.black.opacity(0.2))
+        .background(Color.gray.opacity(0.2))
 //        .clipped()
     }
 }

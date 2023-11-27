@@ -14,6 +14,9 @@
 		4A744A992AD2B4190068BEA1 /* Rain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A744A962AD2B4190068BEA1 /* Rain.swift */; };
 		4A744A9A2AD2B4190068BEA1 /* rainfall.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A744A972AD2B4190068BEA1 /* rainfall.sks */; };
 		4A744A9B2AD2B4190068BEA1 /* rainfalllanding.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A744A982AD2B4190068BEA1 /* rainfalllanding.sks */; };
+		4A7617572B153F2A00C702E1 /* snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4A7617552B153F2A00C702E1 /* snow.sks */; };
+		4A7617592B153F4300C702E1 /* Snow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7617582B153F4300C702E1 /* Snow.swift */; };
+		4A76175B2B153F5100C702E1 /* Sunny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A76175A2B153F5100C702E1 /* Sunny.swift */; };
 		4A88F3162AD29A8C0046D0CE /* ProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A88F3152AD29A8C0046D0CE /* ProjectApp.swift */; };
 		4A88F3182AD29A8C0046D0CE /* PerfumeRecommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A88F3172AD29A8C0046D0CE /* PerfumeRecommender.swift */; };
 		4A88F31A2AD29A8D0046D0CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A88F3192AD29A8D0046D0CE /* Assets.xcassets */; };
@@ -30,6 +33,9 @@
 		4A744A962AD2B4190068BEA1 /* Rain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rain.swift; sourceTree = "<group>"; };
 		4A744A972AD2B4190068BEA1 /* rainfall.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rainfall.sks; sourceTree = "<group>"; };
 		4A744A982AD2B4190068BEA1 /* rainfalllanding.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rainfalllanding.sks; sourceTree = "<group>"; };
+		4A7617552B153F2A00C702E1 /* snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = snow.sks; sourceTree = "<group>"; };
+		4A7617582B153F4300C702E1 /* Snow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snow.swift; sourceTree = "<group>"; };
+		4A76175A2B153F5100C702E1 /* Sunny.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sunny.swift; sourceTree = "<group>"; };
 		4A88F3122AD29A8C0046D0CE /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A88F3152AD29A8C0046D0CE /* ProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectApp.swift; sourceTree = "<group>"; };
 		4A88F3172AD29A8C0046D0CE /* PerfumeRecommender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfumeRecommender.swift; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 		4AAC78042B060D6400B0F958 /* Sunny */ = {
 			isa = PBXGroup;
 			children = (
+				4A76175A2B153F5100C702E1 /* Sunny.swift */,
 			);
 			path = Sunny;
 			sourceTree = "<group>";
@@ -121,6 +128,8 @@
 		4AAC78052B060D6B00B0F958 /* Snow */ = {
 			isa = PBXGroup;
 			children = (
+				4A7617552B153F2A00C702E1 /* snow.sks */,
+				4A7617582B153F4300C702E1 /* Snow.swift */,
 			);
 			path = Snow;
 			sourceTree = "<group>";
@@ -202,6 +211,7 @@
 			files = (
 				4A744A9B2AD2B4190068BEA1 /* rainfalllanding.sks in Resources */,
 				4A88F31D2AD29A8D0046D0CE /* Preview Assets.xcassets in Resources */,
+				4A7617572B153F2A00C702E1 /* snow.sks in Resources */,
 				4A744A9A2AD2B4190068BEA1 /* rainfall.sks in Resources */,
 				4A88F31A2AD29A8D0046D0CE /* Assets.xcassets in Resources */,
 			);
@@ -214,9 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A7617592B153F4300C702E1 /* Snow.swift in Sources */,
 				4A744A8C2AD2AF1D0068BEA1 /* RecommendedPerfume.swift in Sources */,
 				4A88F3182AD29A8C0046D0CE /* PerfumeRecommender.swift in Sources */,
 				4A88F3162AD29A8C0046D0CE /* ProjectApp.swift in Sources */,
+				4A76175B2B153F5100C702E1 /* Sunny.swift in Sources */,
 				4A744A992AD2B4190068BEA1 /* Rain.swift in Sources */,
 				4A47C6712AD2B991003680A7 /* Perfume.swift in Sources */,
 				4A744A8E2AD2B2AD0068BEA1 /* Description.swift in Sources */,

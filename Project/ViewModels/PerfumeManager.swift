@@ -18,7 +18,7 @@ class PerfumeManager: ObservableObject {
     }
     
     @MainActor
-    func recommendPerfumeByValue(_ value: Float) {
+    func recommendPerfumeByValue(_ value: Float, age: String, preference: String) {
         fetchingStatus = .fetching
         Task {
             let recommendedPerfume = await fetchPerfume(value)
@@ -29,10 +29,10 @@ class PerfumeManager: ObservableObject {
         }
     }
         
-    private func fetchPerfume(_ value: Float, preference: String = "오드뚜왈렛") async -> Perfume {
+    private func fetchPerfume(_ value: Float, age: String = "대학생", preference: String = "오드뚜왈렛") async -> Perfume {
         // fetch recommended perfume.
         // add error handling(server response & url)
-//        guard let url = URL(string: "http://127.0.0.1:8000/?value=\(value)&preference=\(preference)") else { return Perfume(name: "", description: "", imageUrl: "")}
+//        guard let url = URL(string: "http://127.0.0.1:8000/?value=\(value)&age=\(age)&preference=\(preference)") else { return Perfume(name: "", description: "", imageUrl: "")}
 //        do {
 //            let (data, response) = try await URLSession.shared.data(from: url)
 //            let recommendedPerfume = try JSONDecoder().decode(PerfumeDecoder.self, from: data)
@@ -40,6 +40,7 @@ class PerfumeManager: ObservableObject {
 //        } catch {
 //            print(error)
 //        }
+        print(value)
         let recommendedPerfume = Perfume(
             name: "Gabrielle CHANEL - Perfume & Fragrance | CHANEL",
             description: "이 향수는....",

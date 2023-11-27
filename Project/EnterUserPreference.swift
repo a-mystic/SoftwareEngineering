@@ -7,24 +7,23 @@
 
 import SwiftUI
 
-struct EnterUserPreference: View {  // 이 View는 나중에 나중에 추가예정
+struct EnterUserPreference: View {  
     @Binding var userPreferenceIsNeed: Bool
+    @Binding var preferencedAge: String
+    @Binding var preferencedPerfume: String
     
-    private let weathers = ["맑은 날", "흐린 날"]
+    private let ages = ["미성년자", "대학생", "직장인", "중년", "노인"]
     private let perfumes = ["시트러스 타입", "플로랄 타입", "오리엔탈 타입", "시프레 타입"]
-    
-    @AppStorage("preferencedWeather") var preferencedWeather = "맑은 날"
-    @AppStorage("preferencedPerfume") var preferencedPerfume = "시트러스 타입"
     
     var body: some View {
         NavigationStack {
             Form {
-                Section("취향을 입력해요") {
+                Section("취향과 연령대를 입력해요") {
                     HStack {
-                        Text("좋아하는 날씨")
-                        Picker("Choose a weather", selection: $preferencedWeather) {
-                            ForEach(weathers, id: \.self) { weather in
-                                Text(weather)
+                        Text("연령대")
+                        Picker("Choose a ages", selection: $preferencedAge) {
+                            ForEach(ages, id: \.self) { age in
+                                Text(age)
                             }
                         }
                         .pickerStyle(WheelPickerStyle())
@@ -55,5 +54,5 @@ struct EnterUserPreference: View {  // 이 View는 나중에 나중에 추가예
 }
 
 #Preview {
-    EnterUserPreference(userPreferenceIsNeed: .constant(true))
+    EnterUserPreference(userPreferenceIsNeed: .constant(true), preferencedAge: .constant("대학생"), preferencedPerfume: .constant("시트러스 타입"))
 }
