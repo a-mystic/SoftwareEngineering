@@ -42,7 +42,7 @@ class PerfumeManager: ObservableObject {
 //        }
         let recommendedPerfume = Perfume(
             name: "Gabrielle CHANEL - Perfume & Fragrance | CHANEL",
-            description: "이 향수는....",
+            description: "사내 조향사 크리에이터 올리비에 폴쥬(Olivier Polge)는 이 오 드 퍼퓸을 상상의 꽃으로 만들었습니다. 4개의 생동감 넘치는 흰색 꽃 부케를 기반으로 한 빛나는 순전히 여성스러운 꽃입니다. 풍부하고 감싸는 듯한 자스민의 하트 향이 일랑일랑의 프루티 그린 노트와 함께 반짝이며, 신선하고 반짝이는 오렌지 꽃송이가 빛나면서 최상의 상태로 포착된 부드러운 그라스 튜베로즈를 엿볼 수 있습니다.",
             imageUrl: "https://puls-img.chanel.com/1688483382665-oneplpherobannermobile1500x1600pxjpg_1600x1500.jpg"
         )
         return recommendedPerfume

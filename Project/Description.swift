@@ -25,6 +25,7 @@ struct Description: View {
                 Section {
                     
                 } footer: {
+                    Text("* 현재 위치의 날씨에 따라 배경이 바뀌어요")
                     Text("\t이 앱은 소프트웨어공학 강의를위해 만들어졌습니다.")
                 }
             }

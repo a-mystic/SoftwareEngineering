@@ -78,7 +78,7 @@ struct PerfumeRecommender: View {
     @ViewBuilder
     private func weatherBackgroundByCurrentWeather() -> some View {
         if currentWeather == "rain" {
-            Rain()
+            Sunny()
         } else if currentWeather == "snow" {
             Snow()
         } else if currentWeather == "sunny" {
@@ -137,7 +137,7 @@ struct PerfumeRecommender: View {
         .dropDestination(for: String.self) { items, location in
             drop(items)
         }
-        .sheet(isPresented: $showPerfume) {
+        .navigationDestination(isPresented: $showPerfume) {
             RecommendedPerfume()
         }
     }
@@ -145,7 +145,7 @@ struct PerfumeRecommender: View {
     private func drop(_ items: [String]) -> Bool {
         if let item = items.first {
             perfumeManager.recommendPerfumeByValue(
-                calcValue(item),
+                calcEmotionValue(item),
                 age: preferencedAge, preference:
                     preferencedPerfume
             )
@@ -156,7 +156,7 @@ struct PerfumeRecommender: View {
         return true
     }
     
-    private func calcValue(_ emotion: String) -> Float {
+    private func calcEmotionValue(_ emotion: String) -> Float {
         switch emotion {
         case "😀": return 0.5
         case "😄": return 1
