@@ -78,7 +78,7 @@ struct PerfumeRecommender: View {
     @ViewBuilder
     private func weatherBackgroundByCurrentWeather() -> some View {
         if currentWeather == "rain" {
-            Sunny()
+            Cloudy()
         } else if currentWeather == "snow" {
             Snow()
         } else if currentWeather == "sunny" {
